@@ -7,20 +7,25 @@
 ## Usage
 
 **import into your source file**
+
 `	from awsdb import DB`
 	
 **Create db object**
 
 \#creates with defaults - resource="dynamodb", region_name='us-east-1', endpoint_url=None. This works fine if you are using this in an aws lambda function
+
 `		db = DB()`
 	
 \#if you have a dynamodb running in your localhost
+
 `		db = DB(endpoint_url = "http://localhost:8000")`
 	
 \#get a specific table object. This method creates the table and returns if not already present
+
 `		table = db.get_table(table_name = "TABLE_NAME", table_params = table_params)`
 
 \#to just create table
+
 `		table = db.create_table(table_name = "TABLE_NAME", table_params = table_params)`
 	
 **Read**
