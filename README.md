@@ -8,7 +8,7 @@
 
 **import into your source file:**
 
-`	from db import DB`
+`	from awsdb import DB`
 	
 **Create db object:**
 
