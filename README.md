@@ -9,13 +9,16 @@
 	
 	** Create db object: **
 	> created with defaults - resource="dynamodb", region_name='us-east-1', endpoint_url=None. This works fine if you are usign this in an aws lambda function
-	`db = DB(`
+	`db = DB()`
 	
 	> if you have a dynamodb running in your localhost
 	`db = DB(endpoint_url = "http://localhost:8000")`
 	
-	> get a specific table object
-	`table = db.get_table(table_name = "TABLE_NAME")`
+	> get a specific table object. If not present, create one using table_params
+	`table = db.get_table(table_name = "TABLE_NAME", table_params = table_params)`
+	
+	> to just create table
+	table = db.create_table(table_name = "TABLE_NAME", table_params = table_params)
 	
 	** Read **
 	> read something from db for a specific primary key. In my case I am using dynamodb and I get json response
