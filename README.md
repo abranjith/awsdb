@@ -12,7 +12,7 @@
 	
 **Create db object:**
 
-\#created with defaults - resource="dynamodb", region_name='us-east-1', endpoint_url=None. This works fine if you are using this in an aws lambda function
+\#creates with defaults - resource="dynamodb", region_name='us-east-1', endpoint_url=None. This works fine if you are using this in an aws lambda function
 
 `		db = DB()`
 	
