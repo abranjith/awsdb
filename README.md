@@ -17,11 +17,13 @@ Usage
     #get a specific table object
     table = db.get_table(table_name = "TABLE_NAME")
     
+  Read
     #read something from db for a specific primary key. In my case I am using dynamodb and I get json response
     key = {'pk': "PK1"}
     #response will contain 'Item' object from my dynamodb table
     response = db.read(table_name = "TABLE_NAME", key = key) 
-    
+   
+  Write
      #write something to db. In this case both key and data to be written is needed. In case key already exists, same record will be udated      #in db
      key = {'pk': "PK1"}
      data = {'data': "My data"}
