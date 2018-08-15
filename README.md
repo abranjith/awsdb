@@ -2,7 +2,7 @@
 
 ## Description
 
-Wrapper around the excellent [boto3](https://github.com/boto/boto3) api. Works just fine with dynamodb
+Wrapper around the excellent [boto3](https://github.com/boto/boto3) api for DB operations in AWS. Works just fine with dynamodb
 Tested with boto3==1.7.70 and python 3.6.*
  
 ## Usage
