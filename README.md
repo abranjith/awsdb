@@ -35,20 +35,22 @@ Wrapper around the excellent boto3 api. Works just fine with dynamodb
 	
 **Read**
 
-	#read something from db for a specific primary key. In my case I am using dynamodb and I get json response
+	'''
+	read something from db for a specific primary key. In my case I am using dynamodb and I get json response
+	'''
+	key = {'pk': "PK1"}
 
-`		key = {'pk': "PK1"}`
-
-	#response will contain 'Item' object from my dynamodb table
-
-`		response = db.read(table_name = "TABLE_NAME", key = key)`
+	'''
+	response will contain 'Item' object from my dynamodb table
+	'''
+	response = db.read(table_name = "TABLE_NAME", key = key)`
 	
 **Write**
 
-	#write something to db. In this case both key and data to be written is needed. In case key already exists, existing record in DB will get upated
-
-`		key = {'pk': "PK1"}`
-
-`		data = {'data': "My data"}`
-
-`		response = dynamodb.write(table_name = "TABLE_NAME", key = key, data = data)`
+	'''
+	write something to db
+	In this case both key and data to be written is needed. In case key already exists, existing record in DB will get updated
+	'''
+	key = {'pk': "PK1"}
+	data = {'data': "My data"}
+	response = dynamodb.write(table_name = "TABLE_NAME", key = key, data = data)
