@@ -13,43 +13,46 @@ Wrapper around the excellent boto3 api. Works just fine with dynamodb
 **Create db object**
 
 	'''
-	creates with defaults - resource="dynamodb", region_name='us-east-1', endpoint_url=None. 
+	Creates with defaults - resource="dynamodb", region_name='us-east-1', endpoint_url=None. 
 	This works fine if you are using this in an aws lambda function
 	'''
 	db = DB()
 	
 	'''
-	if you have a dynamodb running in your localhost
+	If you have a dynamodb running in your localhost
 	'''
 	db = DB(endpoint_url = "http://localhost:8000")
 	
 	'''
-	get a specific table object. This method creates the table and returns if not already present
+	Get a specific table object. 
+	This method creates the table and returns if not already present
 	'''
 	table = db.get_table(table_name = "TABLE_NAME", table_params = table_params)
 
 	'''
-	to just create table
+	To just create table
 	'''
 	table = db.create_table(table_name = "TABLE_NAME", table_params = table_params)
 	
 **Read**
 
 	'''
-	read something from db for a specific primary key. In my case I am using dynamodb and I get json response
+	Read something from db for a specific primary key. 
+	In my case I am using dynamodb and I get json response back
 	'''
 	key = {'pk': "PK1"}
 
 	'''
-	response will contain 'Item' object from my dynamodb table
+	Response will contain 'Item' object from my dynamodb table
 	'''
 	response = db.read(table_name = "TABLE_NAME", key = key)`
 	
 **Write**
 
 	'''
-	write something to db
-	In this case both key and data to be written is needed. In case key already exists, existing record in DB will get updated
+	Write something to db
+	In this case both key and data to be written is needed. If key already exists, existing record in table 
+	will get updated with user data
 	'''
 	key = {'pk': "PK1"}
 	data = {'data': "My data"}
