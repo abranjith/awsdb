@@ -40,9 +40,10 @@ Tested with boto3==1.7.70 and python 3.6.*
 	table params example
 	'''
 	table_params = {
-	'KeySchema' : [{'AttributeName': 'pk', 'KeyType': 'HASH'}],
+		'KeySchema' : [{'AttributeName': 'pk', 'KeyType': 'HASH'}],
         'AttributeDefinitions' : [{'AttributeName': 'pk', 'AttributeType': 'S'}],
-        'ProvisionedThroughput': {'ReadCapacityUnits': 5, 'WriteCapacityUnits': 5}}
+        'ProvisionedThroughput': {'ReadCapacityUnits': 5, 'WriteCapacityUnits': 5}
+	}
 	
 **Read**
 
